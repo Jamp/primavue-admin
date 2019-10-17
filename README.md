@@ -1,4 +1,6 @@
-# karma
+# Plantilla con PrimeVUE
+Estoy creando una plantilla base para futuro proyectos con VueJS, utilizando PrimeVUE
+y su plantilla de Sigma para jugar con sus componentes.
 
 ## Project setup
 ```
