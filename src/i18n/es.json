@@ -1,0 +1,26 @@
+{
+  "general": {
+    "copyright": "Desarrollado por"
+  },
+  "routes": {
+    "home": {
+      "title": "Inicio"
+    },
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "Correo Electrónico",
+      "password": "Contraseña",
+      "login": "Iniciar Sesión",
+      "register": "Registrarse",
+      "login-google": "Usar Google"
+    },
+    "logout": "Cerrar Sesión"
+  },
+  "basics": {
+    "accept": "Aceptar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "next": "Siguiente",
+    "prev": "Anterior"
+  }
+}

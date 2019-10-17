@@ -1,0 +1,11 @@
+//Suggested location to add your overrides so that migration would be easy by just updating the SASS folder in the future
+body .p-button.p-button-google,
+body .p-buttonset.p-button-google > .p-button {
+  color: #ffffff;
+    background-color: #db4a39;
+    border: 1px solid #db4a39;
+}
+
+body .p-inputtext {
+  width: 100%;
+}
