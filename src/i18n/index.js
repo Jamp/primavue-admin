@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import { languageDefault } from '@/config'
 
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-  locale: 'es',
-  fallbackLocale: 'es',
+  locale: languageDefault,
+  fallbackLocale: languageDefault,
   messages: {
     es: require('./es.json')
   },

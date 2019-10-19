@@ -1,15 +1,31 @@
 import { LOGIN_ROUTE, HOME_ROUTE } from '@/router/constants'
+import { sessionNamespace } from '../config'
 
 export default function (Vue) {
   Vue.auth = {
-    isAuth () {
+    login (email, password) {
+      Vue.auth.setProfile({
+        name: 'Pepito José',
+        email: email,
+        session: sessionNamespace
+      })
 
+      return true
     },
-    setProfile () {
-
+    google () {
+      return 'https://url.login.google.com'
+    },
+    logout () {
+      return sessionStorage.removeItem(sessionNamespace)
+    },
+    isAuth () {
+      return !!Vue.auth.getProfile()
+    },
+    setProfile (profile) {
+      sessionStorage.setItem(sessionNamespace, profile)
     },
     getProfile () {
-
+      return sessionStorage.getItem(sessionNamespace) || null
     },
     checkPermission (to, from, next) {
       if (!to.meta.public && !Vue.auth.isAuth()) {

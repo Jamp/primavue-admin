@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import menu from './modules/menu'
+import { languageDefault } from '@/config'
 
 Vue.use(Vuex)
 
@@ -9,7 +10,7 @@ const store = new Vuex.Store({
     menu
   ],
   state: {
-    language: null
+    language: languageDefault
   },
   getters: {
     lang: state => state.language
