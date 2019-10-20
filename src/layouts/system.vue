@@ -1,5 +1,5 @@
 <template>
-  <div :class="containerClass" @click="onWrapperClick">
+  <div class="layout-wrapper" :class="containerClass" @click="onWrapperClick">
     <AppTopBar @menu-toggle="onMenuToggle" />
 
     <div class="layout-sidebar layout-sidebar-dark" @click="onSidebarClick">
@@ -39,38 +39,6 @@ export default {
           label: "Dashboard",
           icon: "pi pi-fw pi-home",
           to: "/"
-        },
-        {
-          label: "Menu Modes",
-          icon: "pi pi-fw pi-cog",
-          items: [
-            {
-              label: "Static Menu",
-              icon: "pi pi-fw pi-bars",
-              command: () => (this.layoutMode = "static")
-            },
-            {
-              label: "Overlay Menu",
-              icon: "pi pi-fw pi-bars",
-              command: () => (this.layoutMode = "overlay")
-            }
-          ]
-        },
-        {
-          label: "Menu Colors",
-          icon: "pi pi-fw pi-align-left",
-          items: [
-            {
-              label: "Dark",
-              icon: "pi pi-fw pi-bars",
-              command: () => (this.layoutColorMode = "dark")
-            },
-            {
-              label: "Light",
-              icon: "pi pi-fw pi-bars",
-              command: () => (this.layoutColorMode = "light")
-            }
-          ]
         },
         {
           label: "Components",
@@ -154,20 +122,6 @@ export default {
               ]
             }
           ]
-        },
-        {
-          label: "Documentation",
-          icon: "pi pi-fw pi-question",
-          command: () => {
-            window.location = "#/documentation";
-          }
-        },
-        {
-          label: "View Source",
-          icon: "pi pi-fw pi-search",
-          command: () => {
-            window.location = "https://github.com/primefaces/sigma-vue";
-          }
         }
       ]
     };
