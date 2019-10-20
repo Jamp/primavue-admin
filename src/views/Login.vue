@@ -9,28 +9,35 @@
         </g>
     </svg>
 
-    <!-- <img alt="Vue logo" src="../assets/logo_white.svg" class="img-center"> -->
     <div id="login" class="text-center">
       <div class="p-grid">
         <div id="panel-color" class="p-md-6"></div>
         <div id="panel-form" class="p-sm-12 p-md-6 p-grid p-dir-col p-justify-center">
           <h1 class="text-center">Bienvenido</h1>
+
+          <Message v-for="msg of messages" :key="msg.text" :severity="msg.type" :closable="msg.closeable">
+            {{ msg.text }}
+          </Message>
+
           <form @submit.prevent="login()">
             <div class="p-grid p-justify-center">
               <div class="p-col-10 p-col-md-8">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon"><i class="pi pi-user" /></span>
-                  <InputText v-model="user.email" :placeholder="'routes.login.email' | translate" />
+                  <InputText v-model="user.email" :placeholder="'routes.login.email' | translate" required="true" type="email" />
                 </div>
               </div>
               <div class="p-col-10 p-col-md-8">
                 <div class="p-inputgroup">
                   <span class="p-inputgroup-addon"><i class="pi pi-lock" /></span>
-                  <InputText v-model="user.password" :placeholder="'routes.login.password' | translate" />
+                  <InputText v-model="user.password" :placeholder="'routes.login.password' | translate" required="true" type="password" />
                 </div>
               </div>
               <div class="p-col-10 p-col-md-8 text-right">
-                <Button :label="'routes.login.login' | translate" class="p-button-info" type="submit" />
+                <Button
+                  type="submit"
+                  :label="'routes.login.login' | translate" class="p-button-info"
+                  :disabled="waiting || $v.user.email.$invalid || $v.user.password.$invalid" />
               </div>
             </div>
           </form>
@@ -49,9 +56,12 @@
   </div>
 </template>
 <script>
+import Message from 'primevue/message'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
+import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 import { HOME_ROUTE } from '@/router/constants'
+import MixinsMessage from '@/mixins/message'
 
 export default {
   name: 'Login',
@@ -61,12 +71,44 @@ export default {
         email: null,
         password: null
       },
-      initialBg: null
+      initialBg: null,
+      waiting: false
     }
   },
   methods: {
-    login () {
-      this.$router.replace(HOME_ROUTE)
+    async login () {
+      const vm = this
+      vm.$set(vm, 'waiting', true)
+      vm.showInfo(vm.$t('routes.login.waiting'))
+      try {
+        const response = await vm.$auth.login(vm.user.email, vm.user.password)
+
+        console.log(response)
+        if (response) {
+          vm.showInfo(vm.$t('routes.login.welcome') + ' ' + response.name)
+          vm.$router.replace(HOME_ROUTE)
+        } else {
+          vm.showError(vm.$t('routes.login.invalid'))
+        }
+        vm.$set(vm, 'waiting', false)
+      } catch (error) {
+        console.log(error)
+        vm.showError(vm.$t('routes.login.failed'))
+        vm.$set(vm, 'waiting', false)
+      }
+    }
+  },
+  validations: {
+    user: {
+      email: {
+        required,
+        email
+      },
+      password: {
+        required,
+        minLength: minLength(6),
+        maxLength: maxLength(24)
+      }
     }
   },
   mounted () {
@@ -76,9 +118,13 @@ export default {
     document.getElementById('app').classList.remove('login-background')
   },
   components: {
+    Message,
     InputText,
     Button
-  }
+  },
+  mixins: [
+    MixinsMessage
+  ]
 }
 </script>
 <style lang="sass">

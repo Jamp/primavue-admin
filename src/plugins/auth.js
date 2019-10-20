@@ -3,14 +3,24 @@ import { sessionNamespace } from '../config'
 
 export default function (Vue) {
   Vue.auth = {
-    login (email, password) {
-      Vue.auth.setProfile({
-        name: 'Pepito José',
-        email: email,
-        session: sessionNamespace
-      })
+    async login (email, password) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(email)
+          if (email === 'h@i.com' && password === '123456') {
+            const profile = {
+              name: 'Pepito José',
+              email: email,
+              session: sessionNamespace
+            }
+            Vue.auth.setProfile(profile)
 
-      return true
+            resolve(profile)
+          } else {
+            resolve(false)
+          }
+        }, 5000)
+      })
     },
     google () {
       return 'https://url.login.google.com'
@@ -22,10 +32,11 @@ export default function (Vue) {
       return !!Vue.auth.getProfile()
     },
     setProfile (profile) {
-      sessionStorage.setItem(sessionNamespace, profile)
+      sessionStorage.setItem(sessionNamespace, JSON.stringify(profile))
     },
     getProfile () {
-      return sessionStorage.getItem(sessionNamespace) || null
+      let profile = sessionStorage.getItem(sessionNamespace)
+      return (profile) ? JSON.parse(profile) : null
     },
     checkPermission (to, from, next) {
       if (!to.meta.public && !Vue.auth.isAuth()) {

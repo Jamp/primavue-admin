@@ -4,15 +4,19 @@
   },
   "routes": {
     "home": {
-      "title": "Inicio"
+      "name": "Inicio"
     },
     "login": {
-      "title": "Iniciar Sesión",
+      "name": "Iniciar Sesión",
       "email": "Correo Electrónico",
       "password": "Contraseña",
       "login": "Iniciar Sesión",
       "register": "Registrarse",
-      "login-google": "Usar Google"
+      "login-google": "Usar Google",
+      "welcome": "Bienvenido",
+      "waiting": "Autenticando, por favor espere...",
+      "invalid": "Usuario y/o Contraseña inválida",
+      "failed": "Ha ocurrido un error inexperado"
     },
     "logout": "Cerrar Sesión"
   },

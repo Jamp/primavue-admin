@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <router-view/>
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
 <script>
-export default {
 
+export default {
+  computed: {
+    layout () {
+      return (
+        (this.$route.meta.hasOwnProperty('layout')) ? this.$route.meta.layout : 'default'
+      ) + '-layout'
+    }
+  }
 }
 </script>
 <style lang="sass">
