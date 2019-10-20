@@ -9,8 +9,8 @@
 <script>
 export default {
   methods: {
-    onMenuToggle(event) {
-      this.$emit("menu-toggle", event)
+    onMenuToggle (event) {
+      this.$emit('menu-toggle', event)
     }
   }
 }

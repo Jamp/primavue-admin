@@ -8,23 +8,23 @@
 
 <script>
 export default {
-  name: "AppFooter",
+  name: 'AppFooter',
   mounted () {
-    var regex = /(?:\u2764)/g;
+    var regex = /(?:\u2764)/g
 
-    var emojifyElement = document.getElementById("emojify");
-    var elementString = emojifyElement.innerHTML;
+    var emojifyElement = document.getElementById('emojify')
+    var elementString = emojifyElement.innerHTML
 
-    var match = regex.exec(elementString);
+    var match = regex.exec(elementString)
 
-    var img = new Image();
-    img.setAttribute('draggable', 'false');
-    img.className = "emojified";
-    img.alt = match[0];
-    img.style.width = "1rem"
-    img.src = "https://abs.twimg.com/emoji/v2/svg/2764.svg";
+    var img = new Image()
+    img.setAttribute('draggable', 'false')
+    img.className = 'emojified'
+    img.alt = match[0]
+    img.style.width = '1rem'
+    img.src = 'https://abs.twimg.com/emoji/v2/svg/2764.svg'
 
-    emojifyElement.innerHTML = elementString.replace(regex, img.outerHTML);
+    emojifyElement.innerHTML = elementString.replace(regex, img.outerHTML)
   }
-};
+}
 </script>

@@ -37,7 +37,7 @@
 </template>
 <script>
 export default {
-  name: "AppSubmenu",
+  name: 'AppSubmenu',
   props: {
     items: Array,
     root: {
@@ -45,34 +45,34 @@ export default {
       default: false
     }
   },
-  data() {
+  data () {
     return {
       activeIndex: null
-    };
+    }
   },
   methods: {
-    onMenuItemClick(event, item, index) {
+    onMenuItemClick (event, item, index) {
       if (item.disabled) {
-        event.preventDefault();
-        return;
+        event.preventDefault()
+        return
       }
 
-      //execute command
+      // execute command
       if (item.command) {
-        item.command({ originalEvent: event, item: item });
-        event.preventDefault();
+        item.command({ originalEvent: event, item: item })
+        event.preventDefault()
       }
 
-      this.activeIndex = index === this.activeIndex ? null : index;
+      this.activeIndex = index === this.activeIndex ? null : index
 
-      this.$emit("menuitem-click", {
+      this.$emit('menuitem-click', {
         originalEvent: event,
         item: item
-      });
+      })
     }
   },
   components: {
     AppSubmenu: this
   }
-};
+}
 </script>

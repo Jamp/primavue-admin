@@ -45,7 +45,7 @@ export default {
   data() {
     return {
       expanded: false
-    };
+    }
   },
   computed: {
     profile () {
@@ -54,15 +54,15 @@ export default {
   },
   methods: {
     onClick(event) {
-      this.expanded = !this.expanded;
-      event.preventDefault();
+      this.expanded = !this.expanded
+      event.preventDefault()
     },
     logout () {
       this.$auth.logout()
       this.$router.replace(LOGIN_ROUTE)
     }
   }
-};
+}
 </script>
 
 <style scoped>
