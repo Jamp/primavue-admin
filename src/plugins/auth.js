@@ -9,9 +9,11 @@ export default function (Vue) {
           console.log(email)
           if (email === 'h@i.com' && password === '123456') {
             const profile = {
-              name: 'Pepito José',
-              email: email,
-              session: sessionNamespace
+              uid: 'h12kj312kjh3kj1h23',
+              photoURL: 'https://avataaars.io/?avatarStyle=Circle',
+              displayName: 'Pepito José',
+              emailVerified: false,
+              email: email
             }
             Vue.auth.setProfile(profile)
 

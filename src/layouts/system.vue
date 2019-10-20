@@ -235,11 +235,6 @@ export default {
           "layout-mobile-sidebar-active": this.mobileMenuActive
         }
       ];
-    },
-    logo() {
-      return this.layoutColorMode === "dark"
-        ? "assets/layout/images/logo-white.svg"
-        : "assets/layout/images/logo.svg";
     }
   },
   beforeUpdate() {
@@ -255,3 +250,9 @@ export default {
   }
 };
 </script>
+<style lang="sass">
+.layout-logo
+  a
+    img
+      max-height: 5rem
+</style>

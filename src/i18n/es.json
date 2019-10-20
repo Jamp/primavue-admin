@@ -1,6 +1,6 @@
 {
   "general": {
-    "copyright": "Desarrollado por"
+    "copyright": "Desarrollado con ❤ a los Scout por"
   },
   "routes": {
     "home": {
@@ -18,7 +18,10 @@
       "invalid": "Usuario y/o Contraseña inválida",
       "failed": "Ha ocurrido un error inexperado"
     },
-    "logout": "Cerrar Sesión"
+    "logout": "Cerrar Sesión",
+    "profile": {
+      "name": "Perfil"
+    }
   },
   "basics": {
     "accept": "Aceptar",
