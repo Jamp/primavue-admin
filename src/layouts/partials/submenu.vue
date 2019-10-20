@@ -9,23 +9,21 @@
           :class="[{'active-route': activeIndex === i}]"
           @click.native="onMenuItemClick($event,item,i)"
           :target="item.target"
-          exact
-        >
-          <i :class="item.icon"></i>
-          <span>{{item.label}}</span>
-          <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
-          <span v-if="item.badge" class="menuitem-badge">{{item.badge}}</span>
+          exact>
+            <i :class="item.icon"></i>
+            <span>{{item.label}}</span>
+            <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
+            <span v-if="item.badge" class="menuitem-badge">{{item.badge}}</span>
         </router-link>
         <a
           v-if="!item.to"
           :href="item.url"
           @click="onMenuItemClick($event,item,i)"
-          target="item.target"
-        >
-          <i :class="item.icon"></i>
-          <span>{{item.label}}</span>
-          <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
-          <span v-if="item.badge" class="menuitem-badge">{{item.badge}}</span>
+          target="item.target">
+            <i :class="item.icon"></i>
+            <span>{{item.label}}</span>
+            <i v-if="item.items" class="pi pi-fw pi-angle-down menuitem-toggle-icon"></i>
+            <span v-if="item.badge" class="menuitem-badge">{{item.badge}}</span>
         </a>
         <transition name="layout-submenu-wrapper">
           <AppSubmenu

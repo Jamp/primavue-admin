@@ -43,10 +43,12 @@ export default function (Vue) {
     checkPermission (to, from, next) {
       if (!to.meta.public && !Vue.auth.isAuth()) {
         next(LOGIN_ROUTE)
+        return
       }
 
       if (to.name === LOGIN_ROUTE.name && Vue.auth.isAuth()) {
         next(HOME_ROUTE)
+        return
       }
 
       next()
