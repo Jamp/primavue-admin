@@ -5,7 +5,7 @@ import router from './router/'
 import store from './store'
 
 import Default from './layouts/default'
-import System from './layouts/system'
+import Matrix from './layouts/matrix'
 
 import 'primevue/resources/themes/nova-light/theme.css'
 import 'primevue/resources/primevue.min.css'
@@ -26,7 +26,7 @@ Vue.config.productionTip = false
 router.beforeEach(Vue.auth.checkPermission)
 
 Vue.component('default-layout', Default)
-Vue.component('system-layout', System)
+Vue.component('matrix-layout', Matrix)
 
 new Vue({
   i18n,

@@ -6,11 +6,11 @@ export default {
   component: () => import('@/views/Home.vue'),
   meta: {
     title: 'menu.dashboard',
-    layout: 'system',
+    layout: 'matrix',
     profile: [
-      'admin',
-      'client',
-      'user'
+      'architect',
+      'agent',
+      'battery'
     ]
   }
 }
