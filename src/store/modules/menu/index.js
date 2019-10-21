@@ -1,4 +1,5 @@
 import main from './main'
+import hello from './hello'
 import auth from './auth'
 import others from './others'
 
@@ -6,6 +7,7 @@ import others from './others'
 const state = {
   items: [
     main,
+    hello,
     auth,
     others
   ]

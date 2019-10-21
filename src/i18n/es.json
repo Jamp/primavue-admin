@@ -6,6 +6,9 @@
     "home": {
       "name": "Inicio"
     },
+    "hello": {
+      "name": "Hello World Vue"
+    },
     "others": {
       "name": "Otras Rutas",
       "children": {
