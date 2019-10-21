@@ -106,9 +106,6 @@ export default {
       ]
     }
   },
-  mounted () {
-    console.log(this.menu)
-  },
   beforeUpdate () {
     if (this.mobileMenuActive) this.addClass(document.body, 'body-overflow-hidden')
     else this.removeClass(document.body, 'body-overflow-hidden')
