@@ -1,10 +1,21 @@
 {
   "general": {
-    "copyright": "Desarrollado con ❤ a los Scout por"
+    "copyright": "Modificado con ❤ por"
   },
   "routes": {
     "home": {
       "name": "Inicio"
+    },
+    "others": {
+      "name": "Otras Rutas",
+      "children": {
+        "about": {
+          "name": "Acerca de ..."
+        },
+        "github": {
+          "name": "Ver en Github"
+        }
+      }
     },
     "login": {
       "name": "Iniciar Sesión",

@@ -1,7 +1,7 @@
 <template>
   <div class="layout-footer">
     <span id="emojify" class="footer-text" style="margin-right: 5px">
-      {{ 'general.copyright' | translate }} <a href="https://icter.us">Icterus</a>
+      {{ 'general.copyright' | translate }} <a href="https://github.com/Jamp/primavue-admin">Jamp</a>
     </span>
   </div>
 </template>

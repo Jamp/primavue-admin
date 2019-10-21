@@ -5,7 +5,8 @@ export default {
   path: '/home',
   component: () => import('@/views/Home.vue'),
   meta: {
-    title: 'menu.dashboard',
+    title: 'routes.home.name',
+    icon: 'pi pi-fw pi-home',
     layout: 'matrix',
     profile: [
       'architect',
