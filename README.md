@@ -10,14 +10,14 @@ y su plantilla de Sigma para jugar con sus componentes.
  - Algunas otras cositas que ire implementando en su momento...
 
 ## Componentes
- - Webpack
- - VueJS 2.x
- - Vue-router
- - Vue-resource
- - Vuex
- - Vue-i18n
- - PrimeVue
- - Sigma-Vue
+ - [Webpack](https://webpack.js.org/)
+ - [VueJS](https://vuejs.org/)
+ - [Vue-router](https://router.vuejs.org/)
+ - [Vue-resource](https://github.com/pagekit/vue-resource)
+ - [Vuex](https://vuex.vuejs.org/)
+ - [Vue-i18n](https://kazupon.github.io/vue-i18n/)
+ - [PrimeVue](https://www.primefaces.org/primevue/)
+ - [Sigma-Vue](https://www.primefaces.org/sigma-vue/)
 
 ## Project setup
 ```
